@@ -5,31 +5,38 @@ import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import hgGif from "./images/hg.gif";
+import toolTrackGif from "./images/tooltrack.gif";
+import recipeGif from "./images/recipes.gif";
 
 const projects = [
+ 
   {
-    title: "Task Tracker (MERN)",
-    gif: "https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif",
-    description:
-      "Full CRUD app with auth-ready structure and clean UI. Built to showcase backend + UI polish.",
-    stack: ["React", "Node", "Express", "MongoDB", "JWT"],
-    links: { live: "#", github: "#" },
-  },
-  {
-    title: "Downtime Tracker (Manufacturing)",
-    gif: "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif",
+    // ✅ rename
+    title: "Tool Tracker (Manufacturing)",
+    // ✅ replace with local gif
+    gif: toolTrackGif,
     description:
       "Smart downtime logging + reporting concept for manufacturing. Great recruiter conversation starter.",
-    stack: ["React", "Charts", "API", "PostgreSQL/Prisma"],
-    links: { live: "#", github: "#" },
+    stack: ["React", "Bootstrap", "API", "MongoDB"],
+    links: { live: "https://mytooltracker.netlify.app/", github: "https://github.com/JonathanB96/tootrack" },
+  },
+  {
+    title: "Recipe Viewer",
+    gif: recipeGif,
+    description:
+      "Full CRUD app with auth-ready structure and clean UI. Built to showcase backend + UI polish.",
+    stack: ["React", "Ruby on rails", "Postgresql", "Active Record"],
+    links: { live: "none", github: "https://github.com/JonathanB96/phase-5-recipe-viewer" },
   },
   {
     title: "Hospital Website",
-    gif: "https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif",
+    // ✅ replace with local gif
+    gif: hgGif,
     description:
       "Multi-page responsive site with modern layout, animations, and clear navigation structure.",
     stack: ["HTML", "Bootstrap", "JS"],
-    links: { live: "#", github: "#" },
+    links: { live: "https://http://hgkinshasa.netlify.app", github: "https://github.com/JonathanB96/hopital-general-kinshasa" },
   },
 ];
 
@@ -228,9 +235,10 @@ export default function App() {
                       </div>
 
                       <div className="d-flex gap-2">
-                        <a href={p.links.live} className="btn btn-light w-50 fw-semibold">
+                        {p.links.live == "none" ? null : <a href={p.links.live} className="btn btn-light w-50 fw-semibold">
                           Live
-                        </a>
+                        </a>}
+                       
                         <a href={p.links.github} className="btn btn-outline-light w-50">
                           GitHub
                         </a>

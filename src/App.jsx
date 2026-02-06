@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 import hgGif from "./images/hg.gif";
 import toolTrackGif from "./images/tooltrack.gif";
 import recipeGif from "./images/recipes.gif";
+import plantsyGif from "./images/plantsy.gif";
 
 const projects = [
  
@@ -17,9 +18,9 @@ const projects = [
     // ✅ replace with local gif
     gif: toolTrackGif,
     description:
-      "Smart downtime logging + reporting concept for manufacturing. Great recruiter conversation starter.",
+      "Smart downtime logging + reporting concept for manufacturing.",
     stack: ["React", "Bootstrap", "API", "MongoDB"],
-    links: { live: "https://mytooltracker.netlify.app/", github: "https://github.com/JonathanB96/tootrack" },
+    links: { live: "https://tootrack.onrender.com/", github: "https://github.com/JonathanB96/tootrack" },
   },
   {
     title: "Recipe Viewer",
@@ -36,7 +37,16 @@ const projects = [
     description:
       "Multi-page responsive site with modern layout, animations, and clear navigation structure.",
     stack: ["HTML", "Bootstrap", "JS"],
-    links: { live: "https://http://hgkinshasa.netlify.app", github: "https://github.com/JonathanB96/hopital-general-kinshasa" },
+    links: { live: "https://hgkinshasa.pages.dev", github: "https://github.com/JonathanB96/hopital-general-kinshasa" },
+  },
+  {
+    title: "Plantsy",
+    // ✅ replace with local gif
+    gif: plantsyGif,
+    description:
+      "Full CRUD React app",
+    stack: ["HTML", "Bootstrap", "JS"],
+    links: { live: "none", github: "https://github.com/JonathanB96/react-plantshop" },
   },
 ];
 
@@ -48,8 +58,9 @@ const fadeUp = {
     transition: { duration: 0.6, delay: 0.08 * i, ease: "easeOut" },
   }),
 };
-
+import { useEffect, useState } from "react";
 export default function App() {
+  
   return (
     <div className="portfolio-root bg-dark text-light min-vh-100">
       {/* Background blobs */}
@@ -169,7 +180,7 @@ export default function App() {
               >
                 <p className="text-secondary mb-2">Currently building:</p>
                 <p className="h4 fw-semibold mb-3">
-                  Animated Portfolio + Project GIF Carousel
+                  Tool Tracker — Smart downtime logging for manufacturing
                 </p>
 
                 <div className="row g-3">
@@ -306,15 +317,16 @@ export default function App() {
 
           <div className="d-flex flex-column flex-md-row gap-2 mt-4">
             <button
-              onClick={() => navigator.clipboard.writeText("your.email@example.com")}
+              onClick={() => navigator.clipboard.writeText("jonbola987@gmail.com")}
               className="btn btn-light fw-semibold px-4 py-2"
             >
               Copy Email
             </button>
-            <a href="#" className="btn btn-outline-light px-4 py-2">
+            <a href="https://www.linkedin.com/in/jonathan-bola-462667181?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              className="btn btn-outline-light px-4 py-2" target="_blank">
               LinkedIn
             </a>
-            <a href="#" className="btn btn-outline-light px-4 py-2">
+            <a href="https://github.com/JonathanB96" target="_blank" className="btn btn-outline-light px-4 py-2">
               GitHub
             </a>
           </div>
